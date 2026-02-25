@@ -3,19 +3,18 @@ public class PalindromeCheckerApp {
     public static void main(String[] args) {
 
         System.out.println("Welcome to Palindrome Checker");
-        System.out.println("Version 2.0");
+        System.out.println("Version 3.0");
 
         String input = "madam";   // Hardcoded string
-        boolean isPalindrome = true;
+        String reversed = "";
 
-        for (int i = 0; i < input.length() / 2; i++) {
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Reverse the string
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
         }
 
-        if (isPalindrome) {
+        // Compare original and reversed
+        if (input.equals(reversed)) {
             System.out.println(input + " is a Palindrome");
         } else {
             System.out.println(input + " is NOT a Palindrome");
